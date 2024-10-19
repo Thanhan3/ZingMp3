@@ -1,4 +1,4 @@
-package com.example.musicplayer.data.repository
+package com.example.musicplayer.data.repository.album
 
 import com.example.musicplayer.ResultCallBack
 import com.example.musicplayer.data.model.album.Album

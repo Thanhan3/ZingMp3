@@ -26,7 +26,9 @@ activity = "1.9.2"
 fragmentKtx = "1.8.4"
 legacySupportV4 = "1.0.0"
 recyclerview = "1.1.0"
+roomCompiler = "2.1.1"
 [libraries]
+androidx-room-compiler-v211 = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }

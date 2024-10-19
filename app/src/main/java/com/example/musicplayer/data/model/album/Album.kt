@@ -1,5 +1,6 @@
 package com.example.musicplayer.data.model.album
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
 data class Album(
