@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.room.paging)
     implementation(libs.room.ktx)
     implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.recyclerview)
     ksp(libs.room.compiler)
 
     implementation(libs.preference)
