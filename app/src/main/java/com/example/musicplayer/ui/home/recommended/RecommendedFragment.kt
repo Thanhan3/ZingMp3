@@ -6,26 +6,52 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.musicplayer.R
+import com.example.musicplayer.data.model.song.Song
+import com.example.musicplayer.databinding.FragmentRecommendedBinding
 
 class RecommendedFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = RecommendedFragment()
-    }
+    private lateinit var binding: FragmentRecommendedBinding
+    private lateinit var adapter: SongAdapter
 
     private val viewModel: RecommendedViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_recommended, container, false)
+        binding = FragmentRecommendedBinding.inflate(inflater, container, false)
+        return binding.root;
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupView()
+        observeViewModel()
+
+    }
+
+    private fun observeViewModel() {
+        viewModel.songs.observe(viewLifecycleOwner) { songs ->
+            adapter.updateSongs(songs)
+        }
+    }
+
+    private fun setupView() {
+        adapter = SongAdapter(
+            object : SongAdapter.OnSongClickListener{
+                override fun onSongClick(song: Song, position : Int) {
+
+                }
+            },
+            object : SongAdapter.OnSongOptionMenuClickListener{
+                override fun onSongOptionMenuClick(position: Int) {
+
+                }
+            }
+        )
+        binding.includeSongList.rvSongList.adapter = adapter
+
+
     }
 }

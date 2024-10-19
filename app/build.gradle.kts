@@ -5,6 +5,7 @@ plugins {
    // id("androidx.navigation.safeargs")
  //   id("com.google.gms.google-services")
     id("com.google.devtools.ksp")
+
 }
 
 android {
@@ -24,6 +25,8 @@ android {
     room {
         schemaDirectory("$projectDir/schemas")
     }
+
+
     buildTypes {
         release {
             isMinifyEnabled = false
