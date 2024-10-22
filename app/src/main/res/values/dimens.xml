@@ -13,4 +13,11 @@
     <dimen name="margin_4">4dp</dimen>
     <dimen name="card_corner_radius_8">8dp</dimen>
     <dimen name="margin_2">2dp</dimen>
+    <dimen name="playlist_artwork_width">150dp</dimen>
+    <dimen name="playlist_artwork_height">150dp</dimen>
+    <dimen name="card_corner_radius_16">16dp</dimen>
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="detail_song_artwork_width">128dp</dimen>
+    <dimen name="detail_song_artwork_height">128dp</dimen>
 </resources>

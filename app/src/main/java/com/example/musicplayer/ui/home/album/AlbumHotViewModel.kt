@@ -12,25 +12,12 @@ import kotlinx.coroutines.launch
 import com.example.musicplayer.data.source.Result
 
 class AlbumHotViewModel : ViewModel() {
-    private val albumRepository = AlbumRepositoryImpl()
     private val _albums = MutableLiveData<List<Album>>()
-    val albums: LiveData<List<Album>> = _albums
+    val albums: LiveData<List<Album>>
+        get() = _albums
 
-    init {
-        loadAlbums()
+    fun setAlbums(albums: List<Album>) {
+        _albums.postValue(albums)
     }
 
-    private fun loadAlbums() {
-        viewModelScope.launch(Dispatchers.IO) {
-            albumRepository.loadAlbums(object : ResultCallBack<Result<List<Album>>> {
-                override fun onResult(result: Result<List<Album>>) {
-                    if (result is Result.Success) {
-                        _albums.postValue(result.data)
-                    } else {
-                        _albums.postValue(emptyList())
-                    }
-                }
-            })
-        }
-    }
 }

@@ -42,9 +42,9 @@ class SongAdapter(
             val oldSize = songs.size
             songs.clear()
             songs.addAll(it)
-            if (oldSize >= songs.size){
-                notifyItemRangeRemoved(0, oldSize)
-            }
+//            if (oldSize >= songs.size){
+//                notifyItemRangeRemoved(0, oldSize)
+//            }
             notifyItemRangeChanged(0 , songs.size)
 
         }

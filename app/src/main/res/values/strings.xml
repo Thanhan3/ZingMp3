@@ -22,4 +22,31 @@
     <string name="text_song_artist">Song Artist</string>
     <string name="title_albums_hot">Album Hot</string>
     <string name="title_recommended">Recommended Songs</string>
+    <string name="title_detail_album">Chi tiết album</string>
+    <string name="image_desc">//</string>
+    <string name="title_song_list">Song List</string>
+    <string name="text_playlist_num_of_song">Số bài: %d</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="item_download">DowLoad</string>
+    <string name="item_add_to_favourites">Add to favorite</string>
+    <string name="item_add_to_playlist">Add to playlist</string>
+    <string name="item_add_to_queue">Add to play next</string>
+    <string name="item_view_album">View album</string>
+    <string name="item_view_artist">View artist</string>
+    <string name="item_report_error">Report erro</string>
+    <string name="item_block">Block</string>
+    <string name="item_view_song_information">View song information</string>
+    <string name="text_song_detail_title">Title: %s</string>
+    <string name="text_song_detail_artist">Artist: %s</string>
+    <string name="text_song_detail_album">Album: %s</string>
+    <string name="text_song_detail_duration">Duration: %s</string>
+    <string name="text_song_detail_counter">Replay: %d</string>
+    <string name="text_song_detail_replay_counter">Your replay: %d</string>
+    <string name="text_song_detail_favorite_status">Your favoris: %s</string>
+    <string name="text_song_detail_genre">Genre: %s</string>
+    <string name="text_song_detail_year">Release year: %s</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="not_available">Not available</string>
 </resources>

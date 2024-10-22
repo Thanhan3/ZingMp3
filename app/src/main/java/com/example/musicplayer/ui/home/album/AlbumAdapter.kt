@@ -41,16 +41,17 @@ class AlbumAdapter(private val listener: OnAlbumClickListener) : RecyclerView.Ad
     override fun getItemCount(): Int {
         return albums.size
     }
-    fun updateAlbum(newAlbums : List<Album>?){
+    fun updateAlbums(newAlbums : List<Album>?){
         newAlbums?.let{
             val oldSize = albums.size
             albums.clear()
             albums.addAll(it)
-            if (oldSize>albums.size){
-                notifyItemRangeRemoved(0,oldSize)
-            }else{
-                notifyItemRangeInserted(0,albums.size)
-            }
+//            if (oldSize>albums.size){
+//                notifyItemRangeRemoved(0,oldSize)
+//            }else{
+//                notifyItemRangeInserted(0,albums.size)
+//            }
+            notifyItemRangeChanged(0 ,albums.size)
         }
 
     }

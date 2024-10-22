@@ -12,27 +12,11 @@ import com.example.musicplayer.data.source.Result
 import kotlinx.coroutines.launch
 
 class RecommendedViewModel : ViewModel() {
-    private val songRepository = SongRepositoryImpl()
     private val _songs = MutableLiveData<List<Song>>()
-    val songs: LiveData<List<Song>> = _songs
+    val songs: LiveData<List<Song>>
+        get() = _songs
 
-    init {
-        loadSongs()
+    fun setSongs(songs: List<Song>) {
+        _songs.postValue(songs)
     }
-
-    private fun loadSongs() {
-        viewModelScope.launch(Dispatchers.IO) {
-            songRepository.loadSongs(object : ResultCallBack<Result<List<Song>>> {
-                override fun onResult(result: Result<List<Song>>) {
-                    if (result is Result.Success) {
-                        _songs.postValue(result.data)
-                    }
-                    else {
-                        _songs.postValue(emptyList())
-                    }
-                }
-            })
-        }
-    }
-
 }
