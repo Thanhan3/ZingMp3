@@ -110,7 +110,7 @@ class PlaybackService : MediaSessionService() {
                 saveCounterAndReplay()
             }
         }
-        handler.postDelayed(recentSongRunnable!!, 5000) // Chờ 5 giây
+        handler.postDelayed(recentSongRunnable!!, 5000)
     }
 
     private fun cancelRecentSongTimer() {

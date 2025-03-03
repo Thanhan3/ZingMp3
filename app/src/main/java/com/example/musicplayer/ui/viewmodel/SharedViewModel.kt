@@ -143,6 +143,10 @@ class SharedViewModel private constructor(
         _indexToPlay.value = index
     }
 
+    fun getPlaylist(playlistName: String): Playlist? {
+        return _playlists.getOrDefault(playlistName, null)
+    }
+
     class Factory(
         private val songRepository: SongRepositoryImpl,
         private val recentSongRepository: RecentSongRepositoryImpl

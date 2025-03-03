@@ -15,6 +15,8 @@ import com.example.musicplayer.data.model.album.Album
 import com.example.musicplayer.data.model.artist.Artist
 import com.example.musicplayer.data.model.artist.ArtistSongCrossRef
 import com.example.musicplayer.data.model.playlist.PlaylistSongCrossRef
+import com.example.musicplayer.data.model.search.HistorySearchedKey
+import com.example.musicplayer.data.model.search.HistorySearchedSong
 import com.example.musicplayer.data.model.song.RecentSong
 import com.example.musicplayer.data.model.song.Song
 
@@ -26,16 +28,19 @@ import com.example.musicplayer.data.model.song.Song
         RecentSong::class,
         PlaylistSongCrossRef::class,
         Artist::class,
-        ArtistSongCrossRef::class
+        ArtistSongCrossRef::class,
+        HistorySearchedKey::class,
+        HistorySearchedSong::class
     ],
-    version = 4,
+    version = 6,
     exportSchema = true,
     autoMigrations = [
-        AutoMigration(from = 3, to = 4, spec = AppDatabase.MigrationSpec::class)
+        AutoMigration(from = 5, to = 6, spec = AppDatabase.MigrationSpec::class)
     ]
 )
 @TypeConverters(DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
+    abstract fun searchingDao(): SearchingDao
     abstract fun songDao(): SongDao
     abstract fun playlistDao(): PlaylistDao
     abstract fun albumDao(): AlbumDao

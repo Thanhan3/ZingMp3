@@ -89,4 +89,12 @@
     <string name="text_size_header">Display text size</string>
     <string name="language_title">Application language</string>
     <string name="text_size_title">Application text size</string>
+    <string name="search_hint">Song,artist..</string>
+    <string name="key_history">History search key</string>
+    <string name="title_recent_searched_keys">Recent searched</string>
+    <string name="action_delete">Delete</string>
+    <string name="recent_searched_song">Recent search song</string>
+    <string name="confirmation_title">delete</string>
+    <string name="message_confirm_clear_history">Are you sure?</string>
+    <string name="message_confirm_clear_song_history">Are you sure you want to clear all search history?</string>
 </resources>

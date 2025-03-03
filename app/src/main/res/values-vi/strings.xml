@@ -74,4 +74,12 @@
     <string name="text_size_header">Kích cỡ chữ</string>
     <string name="language_title">Ngôn ngữ của ứng dụng</string>
     <string name="text_size_title">Kích cỡ chữ của ứng dụng</string>
+    <string name="search_hint">Tên bài hát..</string>
+    <string name="key_history">Lịch sử từ khóa tìm kiếm</string>
+    <string name="action_delete">Xóa bỏ</string>
+    <string name="title_recent_searched_keys">Từ khóa tìm kiếm gần đây</string>
+    <string name="recent_searched_song">Bài hát tìm kiếm gần đây</string>
+    <string name="confirmation_title">Xác nhận xóa</string>
+    <string name="message_confirm_clear_history">Bạn có chắc chắn muốn xóa tất cả lịch sử từ khóa </string>
+    <string name="message_confirm_clear_song_history">Bạn có chắc chắn muốn xóa tất cả lịch sử tìm kiếm bài hát ?</string>
 </resources>

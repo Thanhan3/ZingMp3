@@ -1,5 +1,6 @@
 package com.example.musicplayer.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +8,14 @@ import android.view.ViewGroup
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.musicplayer.MusicApplication
+import com.example.musicplayer.R
 
 import com.example.musicplayer.databinding.FragmentHomeBinding
 import com.example.musicplayer.ui.home.album.AlbumHotViewModel
 import com.example.musicplayer.ui.home.recommended.RecommendedViewModel
+import com.example.musicplayer.ui.searching.SearchingFragment
 
 class HomeFragment : Fragment() {
 
@@ -37,6 +41,17 @@ class HomeFragment : Fragment() {
         if (!isObserved) {
             setupObserver()
             isObserved = true
+        }
+        setupBtnSearch()
+    }
+
+    @SuppressLint("DetachAndAttachSameFragment")
+    private fun setupBtnSearch() {
+        _binding.btnSearchHome.setOnClickListener {
+            val searchFragment = SearchingFragment()
+            _binding.btnSearchHome.setOnClickListener {
+                findNavController().navigate(R.id.searchFragment)
+            }
         }
     }
 

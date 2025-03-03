@@ -7,6 +7,7 @@ import androidx.media3.session.SessionToken
 import com.example.musicplayer.data.repository.artist.ArtistRepositoryImpl
 import com.example.musicplayer.data.repository.playlist.PlaylistRepositoryImpl
 import com.example.musicplayer.data.repository.recent_song.RecentSongRepositoryImpl
+import com.example.musicplayer.data.repository.searching.SearchingRepositoryImpl
 import com.example.musicplayer.data.repository.song.SongRepositoryImpl
 import com.example.musicplayer.ui.playing.PlaybackService
 import com.example.musicplayer.ui.viewmodel.MediaPlayerViewModel
@@ -22,6 +23,7 @@ class MusicApplication : Application() {
     private lateinit var songRepository: SongRepositoryImpl
     private lateinit var playlistRepository: PlaylistRepositoryImpl
     private lateinit var artistRepository: ArtistRepositoryImpl
+    private lateinit var searchRepository: SearchingRepositoryImpl
 
     override fun onCreate() {
         super.onCreate()
@@ -67,6 +69,10 @@ class MusicApplication : Application() {
         val playlistDataSource =
             InjectionUtils.providePlaylistDataSource(applicationContext)
         playlistRepository= InjectionUtils.providePlaylistRepository(playlistDataSource)
+
+        val searchingDataSource =
+            InjectionUtils.provideSearchingDataSource(applicationContext)
+        searchRepository = InjectionUtils.provideSearchingRepository(searchingDataSource)
     }
 
     fun getArtistRepository(): ArtistRepositoryImpl {
@@ -83,5 +89,9 @@ class MusicApplication : Application() {
 
     fun getPlaylistRepository():PlaylistRepositoryImpl{
         return playlistRepository
+    }
+
+    fun getSearchRepository(): SearchingRepositoryImpl {
+        return searchRepository
     }
 }

@@ -25,4 +25,10 @@
         android:id="@+id/navigation_settings"
         android:name="com.example.musicplayer.ui.settings.SettingsFragment"
         android:label="SettingsFragment" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.musicplayer.ui.searching.SearchingFragment"
+        android:label="Search" />
+
 </navigation>

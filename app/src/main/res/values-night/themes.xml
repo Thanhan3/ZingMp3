@@ -24,6 +24,10 @@
         <item name="backgroundColor">?android:colorBackground</item>
     </style>
 
+    <style name="SearchedKeyStyle">
+        <item name="android:background">?attr/colorSurface</item>
+    </style>
+
     <style name="MiniPlayerTheme">
         <item name="android:background">@color/black</item>
     </style>

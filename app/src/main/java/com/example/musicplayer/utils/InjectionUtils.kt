@@ -4,14 +4,17 @@ import android.content.Context
 import com.example.musicplayer.data.repository.artist.ArtistRepositoryImpl
 import com.example.musicplayer.data.repository.playlist.PlaylistRepositoryImpl
 import com.example.musicplayer.data.repository.recent_song.RecentSongRepositoryImpl
+import com.example.musicplayer.data.repository.searching.SearchingRepositoryImpl
 import com.example.musicplayer.data.repository.song.SongRepositoryImpl
 import com.example.musicplayer.data.source.ArtistDataSource
 import com.example.musicplayer.data.source.PlaylistDataSource
+import com.example.musicplayer.data.source.SearchingDataSource
 import com.example.musicplayer.data.source.SongDataSource
 import com.example.musicplayer.data.source.local.AppDatabase
 import com.example.musicplayer.data.source.local.LocalArtistDataSource
 import com.example.musicplayer.data.source.local.LocalPlaylistDataSource
 import com.example.musicplayer.data.source.local.LocalRecentSongDataSource
+import com.example.musicplayer.data.source.local.LocalSearchingDataSource
 import com.example.musicplayer.data.source.local.LocalSongDataSource
 
 object InjectionUtils {
@@ -54,6 +57,15 @@ object InjectionUtils {
 
     fun provideArtistRepository(dataSource: ArtistDataSource.Local): ArtistRepositoryImpl {
         return ArtistRepositoryImpl(dataSource)
+    }
+
+    fun provideSearchingDataSource(context: Context): SearchingDataSource {
+        val database = AppDatabase.getInstance(context)
+        return LocalSearchingDataSource(database.searchingDao())
+    }
+
+    fun provideSearchingRepository(dataSource: SearchingDataSource): SearchingRepositoryImpl {
+        return SearchingRepositoryImpl(dataSource)
     }
 
 }
